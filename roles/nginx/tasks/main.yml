@@ -1,0 +1,24 @@
+---
+- name: Ensure of kernel optimization
+  include: set_sysctl.yml
+
+- name: Add NGINX repository
+  include: add_repository.yml
+
+- name: Ensure of NGINX is installed
+  include: service_installed.yml
+
+- name: Ensure of Service is installed
+  include: service_enabled.yml
+
+- name: Ensure of Logs Directory
+  include: service_logs.yml
+
+- name: Placing of Service configuration
+  include: service_configuration.yml
+
+- name: Ensure of Service is Started
+  include: service_started.yml
+
+- name: Ensure of Logrotation
+  include: logrotate.yml

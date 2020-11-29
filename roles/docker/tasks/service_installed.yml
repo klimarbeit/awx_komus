@@ -1,0 +1,6 @@
+---
+- name: Ensure of Docker CE service is installed and enabled
+  yum:
+    name: "{{ components }}"
+    state: latest
+  with_items: "{{ docker.components }}"

@@ -1,0 +1,15 @@
+---
+- name: Get ID of root drive
+  shell:
+    cmd: stat / | grep Device | awk '{print $2}'
+  register: root_drive
+
+- name: Get ID of Docker data drive
+  shell:
+    cmd: stat {{ docker.data.path }} | grep Device | awk '{print $2}'
+  register: docker_drive
+
+- name: Compare IDs
+  fail:
+    msg: "Docker Service would not be started because of Docker Data is located at Root Partition!"
+  when: docker_drive.stdout_lines == root_drive.stdout_lines

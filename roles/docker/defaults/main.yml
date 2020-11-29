@@ -1,0 +1,15 @@
+---
+docker:
+  config:
+    path: /etc/docker/daemon.json
+  components:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+  data:
+    path: /data/docker
+  log:
+    type: gelf
+    protocol: udp
+    address: 172.16.3.131
+    port: 5022

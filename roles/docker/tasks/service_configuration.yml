@@ -1,0 +1,6 @@
+---
+- name: Place Service configuration
+  template:
+    src: docker.json.j2
+    dest: "{{ docker.config.path }}"
+  notify: reload docker

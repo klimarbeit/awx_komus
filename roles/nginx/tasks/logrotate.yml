@@ -1,0 +1,5 @@
+---
+- name: Ensure of Logrotate configuration
+  template:
+    src: logrotate.j2
+    dest: /etc/logrotate.d/nginx

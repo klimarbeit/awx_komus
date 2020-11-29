@@ -1,0 +1,10 @@
+---
+- name: Add and Docker CE repository
+  yum_repository:
+    name: docker-ce
+    description: Docker CE stable
+    state: present
+    file: https://download.docker.com/linux/centos/7/$basearch/stable
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://download.docker.com/linux/centos/gpg

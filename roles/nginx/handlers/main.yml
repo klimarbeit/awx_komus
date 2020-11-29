@@ -1,0 +1,9 @@
+---
+- name: reload nginx
+  service:
+    name: nginx
+    state: reloaded
+
+- name: reload updated sysctl
+  shell:
+    cmd: sysctl -p /etc/sysctl.d/sysctl-nginx.conf

@@ -1,0 +1,15 @@
+{{ nginx.log.path }}/*.log {
+        daily
+        missingok
+        rotate {{ nginx.log.retention }}
+        compress
+        delaycompress
+        notifempty
+        create 640 nginx adm
+        sharedscripts
+        postrotate
+                if [ -f {{ nginx.pid.path }}/nginx.pid ]; then
+                        kill -USR1 `cat {{ nginx.pid.path }}/nginx.pid`
+                fi
+        endscript
+}

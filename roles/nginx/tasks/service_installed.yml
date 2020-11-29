@@ -1,0 +1,6 @@
+---
+- name: Check that Service is installed
+  yum:
+    name: nginx
+    state: installed
+    releasever: "{{ nginx.version }}"

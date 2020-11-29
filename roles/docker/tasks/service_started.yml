@@ -1,0 +1,6 @@
+---
+- name: Ensure of Service is started
+  service:
+    name: docker
+    state: restarted
+    

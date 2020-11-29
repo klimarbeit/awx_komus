@@ -1,0 +1,5 @@
+---
+- name: Add repository
+  copy:
+    src: nginx.repo
+    dest: /etc/yum.repos.d/nginx.repo

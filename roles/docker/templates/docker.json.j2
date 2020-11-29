@@ -1,0 +1,11 @@
+{
+  "data-root": "{{ docker.data.path }}",
+  "experimental": true,
+  "metrics-addr": "0.0.0.0:9100",
+  "live-restore": true,
+  "log-driver": "{{ docker.log.type }}",
+  "log-opts": {
+    "{{ docker.log.type }}-address": "{{ docker.log.protocol }}://{{ docker.log.address }}:{{ docker.log.port }}"
+  },
+  "storage-driver": "overlay2"
+}

@@ -1,0 +1,6 @@
+---
+- name: Place sysctl configuration
+  copy:
+    src: sysctl-nginx.conf
+    dest: /etc/sysctl.d/sysctl-nginx.conf
+  notify: reload updated sysctl

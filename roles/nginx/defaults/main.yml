@@ -1,0 +1,7 @@
+nginx:
+  version: 1.14.0
+  log:
+    path: /var/log/nginx
+    retention: 52
+  pid:
+    path: /var/run
